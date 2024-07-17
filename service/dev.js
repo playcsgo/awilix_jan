@@ -27,7 +27,7 @@ class DevService {
 
     return this.devDao.createDev(email, fName, mNames, lName);
   }
-
+  
   sanitizeNames(firstName, middleNameStr, lastName) {
     // eslint-disable-next-line prefer-const
     let [sanitizedFirstName, ...mNames] = firstName.trim().split(' ');

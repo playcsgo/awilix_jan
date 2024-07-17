@@ -14,7 +14,7 @@ const container = awilix.createContainer({
 function setup() {
   container.register({
     devController: awilix.asClass(DevController),
-
+    
     devService: awilix.asClass(DevService),
 
     devDao: awilix.asClass(DevDao),
