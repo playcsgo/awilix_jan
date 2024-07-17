@@ -17,7 +17,7 @@ function setup() {
 
     devService: awilix.asClass(DevService),
 
-    dveDao: awilix.asClass(DevDao),
+    devDao: awilix.asClass(DevDao),
 
     db: awilix.asValue(db)  // 因為 db是一個由knexjs創建好的instance, 所以用asValue
   })

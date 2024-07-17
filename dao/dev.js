@@ -1,9 +1,14 @@
 /* eslint-disable class-methods-use-this */
-const db = require('../db');
+// const db = require('../db');
 
 class DevDao {
+
+  constructor({ db }) {
+    this.db = db
+  }
+
   async createDev(email, firstName, middleNames, lastName) {
-    const [id] = await db('developer')
+    const [id] = await this.db('developer')
       .insert({
         email,
         first_name: firstName,
@@ -16,7 +21,7 @@ class DevDao {
 
   async getDev(id) {
     try {
-      const devs = await db.select('*').from('developer').where('id', id);
+      const devs = await this.db.select('*').from('developer').where('id', id);
       return devs && devs.length >= 1 ? devs[0] : null;
     } catch (err) {
       console.error(err);

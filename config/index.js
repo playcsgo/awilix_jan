@@ -38,8 +38,8 @@ const config = convict({
     password: {
       doc: 'database password',
       format: '*',
-      default: 0204,
-      env: 'DB_PASSWORD',
+      default: '0204',
+      // env: 'DB_PASSWORD',
     },
   },
 });
