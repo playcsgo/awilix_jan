@@ -44,4 +44,4 @@ class DevService {
   }
 }
 
-module.exports = new DevService();
+module.exports = DevService;

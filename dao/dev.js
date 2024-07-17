@@ -25,4 +25,4 @@ class DevDao {
   }
 }
 
-module.exports = new DevDao();
+module.exports = DevDao;

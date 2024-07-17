@@ -28,4 +28,4 @@ class DevController {
   }
 }
 
-module.exports = new DevController();
+module.exports = DevController
