@@ -1,5 +1,9 @@
 const express = require('express');
 const apiErrorHandler = require('./error/api-error-handler');
+const { setup } = require('./di-setup')
+// setup 要在route之前執行. 因為route裡面有用到container
+setup()
+
 const router = require('./routes');
 
 class Server {

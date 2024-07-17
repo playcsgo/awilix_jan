@@ -1,10 +1,20 @@
 /* eslint-disable class-methods-use-this */
-const devDao = require('../dao/dev');  // service 裡面又有dev.  too many coupling
+// const devDao = require('../dao/dev');  // service 裡面又有dev.  too many coupling
+
 
 class DevService {
   
+  constructor({ devDao }) {
+    this.devDao = devDao
+
+    // 因為 service 不會直接被Express call,
+    // 只會被controller call.  所以不用綁this.
+  }
+
   getDev(id) {
-    return devDao.getDev(id);
+    return this.devDao.getDev(id);
+
+
   }
 
   createDev({ email, firstName, middleNames, lastName }) {
@@ -15,7 +25,7 @@ class DevService {
       lastName
     );
 
-    return devDao.createDev(email, fName, mNames, lName);
+    return this.devDao.createDev(email, fName, mNames, lName);
   }
 
   sanitizeNames(firstName, middleNameStr, lastName) {
